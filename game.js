@@ -24,7 +24,6 @@ return(
 })
 
 let answer=[]
-
 function displayRandomImage(){
     answer.map(image=>{
         myAnswer.innerHTML=""
@@ -46,31 +45,29 @@ if(image.id==id){
 if(id==1){
     if(image.id==2){
         decider.innerText="You win"  
-        wins.innerHTML + 1
+        wins.innerHTML++
     }
 }else if(id==2){
     if(image.id==3){
         decider.innerText="You win"  
-        wins.innerHTML + 1
+        wins.innerHTML++
     }
 }else if(id==3){
     if(image.id==2){
         decider.innerText="You loss"  
-        lost.innerHTML + 1
+        lost.innerHTML++
     }
 }else if(id==1){
     if(image.id==3){
         decider.innerText="You loss"  
-        lost.innerHTML + 1
+        lost.innerHTML++
     }
 }
 else if(id==3){
-    answer.forEach(asn=>{
-        if(asn.id==1){
-            decider.innerText="You win"  
-            wins.innerHTML++
-        }
-    }) 
+    if(image.id==1){
+        decider.innerText="You win"  
+        wins.innerHTML++
+    }
 }
 })
 randomImage()
@@ -83,5 +80,4 @@ function randomImage(){
     let pic = images[Math.floor(Math.random() * images.length )]
     answer.push(pic)
     displayRandomImage()
-    console.log(answer)
 }
